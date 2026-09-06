@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bp5e6r83rxi5e"]
+
+[ext_resource type="Script" uid="uid://b5ugoen5q5up3" path="res://scripts/cutscene.gd" id="1_k3dre"]
+
+[node name="Cutscene" type="CanvasLayer" unique_id=1882979711]
+script = ExtResource("1_k3dre")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1041356460]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=542684106]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1

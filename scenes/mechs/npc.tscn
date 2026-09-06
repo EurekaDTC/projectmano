@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cdes5442xfli6"]
+
+[ext_resource type="Script" uid="uid://dy1j65i4ssi0i" path="res://scripts/npc.gd" id="1_t7kbk"]
+[ext_resource type="Texture2D" uid="uid://dcplys1srw447" path="res://art/characters/mano_cm/cm_southeast.png" id="2_xlphk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi375"]
+atlas = ExtResource("2_xlphk")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm6pb"]
+atlas = ExtResource("2_xlphk")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey4r3"]
+atlas = ExtResource("2_xlphk")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdsew"]
+atlas = ExtResource("2_xlphk")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wuxpp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi375")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm6pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey4r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdsew")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlphk"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wuxpp"]
+radius = 33.37664
+
+[node name="Npc" type="Area2D" unique_id=1069329009]
+script = ExtResource("1_t7kbk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1808918259]
+sprite_frames = SubResource("SpriteFrames_wuxpp")
+animation = &"idle"
+frame_progress = 0.35478464
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=213320096]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_xlphk")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=510613950]
+position = Vector2(1, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1169651708]
+shape = SubResource("CircleShape2D_wuxpp")

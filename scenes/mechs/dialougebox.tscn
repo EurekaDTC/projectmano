@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cn6k63helggel"]
+
+[ext_resource type="Script" uid="uid://b51c0074wkocx" path="res://scripts/dialougebox.gd" id="1_emtap"]
+
+[node name="Dialougebox" type="CanvasLayer" unique_id=2140652585]
+script = ExtResource("1_emtap")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=526376612]
+offset_left = 6.0
+offset_top = 156.0
+offset_right = 380.0
+offset_bottom = 214.0
+color = Color(0, 0, 0, 0.4627451)
+
+[node name="Panel" type="Panel" parent="." unique_id=1060991201]
+offset_left = 4.0
+offset_top = 157.0
+offset_right = 380.0
+offset_bottom = 213.0
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=1913812722]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -18.0
+offset_right = 60.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 10
+text = "Name :"
+
+[node name="DialougeLabel" type="Label" parent="Panel" unique_id=105421734]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 302.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 11
+text = "Hello World"
+autowrap_mode = 3
+
+[node name="NextButton" type="Button" parent="Panel" unique_id=1915979741]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 29.0
+offset_right = 370.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 10
+text = "Next"
