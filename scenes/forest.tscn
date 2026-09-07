@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ctdguec07rrei" path="res://art/objects/Large_banyan_tree_with_thick_g.png" id="7_0nboi"]
 [ext_resource type="PackedScene" uid="uid://b11gh1lxgprfv" path="res://scenes/characters/queen.tscn" id="8_qm7rg"]
 [ext_resource type="PackedScene" uid="uid://b3j5pui7lih81" path="res://scenes/animals/horse.tscn" id="9_0nboi"]
+[ext_resource type="Script" uid="uid://bchqppcssa01l" path="res://scenes/animals/horse.gd" id="10_3knxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
 texture = ExtResource("1_sek5r")
@@ -1012,4 +1013,11 @@ tile_set = SubResource("TileSet_wuxpp")
 position = Vector2(357, 459)
 
 [node name="player" parent="." unique_id=1963584179 instance=ExtResource("9_0nboi")]
-position = Vector2(590, 486)
+position = Vector2(601, 408)
+script = ExtResource("10_3knxq")
+speed = 40.0
+roam_distance = 100.0
+min_walk_time = 1.0
+max_walk_time = 3.0
+min_idle_time = 1.0
+max_idle_time = 3.0

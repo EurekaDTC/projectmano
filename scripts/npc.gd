@@ -4,14 +4,13 @@ extends Node2D
 @export var dialogue_lines: Array[String] = []
 
 @onready var interact_area: Area2D = $InteractArea
-@onready var dialogue_box = get_tree().current_scene.get_node("Dialoguebox")
+@onready var dialogue_box = get_tree().current_scene.get_node_or_null("Dialoguebox")
 
 var player_inside := false
 var talking := false
 
 
-func _ready():
-	# Make sure the Area2D exists
+func _ready() -> void:
 	if interact_area == null:
 		push_error("NPC: InteractArea not found!")
 		return
@@ -20,20 +19,29 @@ func _ready():
 	interact_area.body_exited.connect(_on_body_exited)
 
 
-func _on_body_entered(body):
-	if body.name == "player2":
-		player_inside = true
-		
-		if not talking:
-			talk()
+func _on_body_entered(body: Node) -> void:
+	if body.name != "player2":
+		return
+
+	player_inside = true
+
+	print("NPC: Player entered interaction area")
+
+	if not talking:
+		talk()
 
 
-func _on_body_exited(body):
-	if body.name == "player2":
-		player_inside = false
+func _on_body_exited(body: Node) -> void:
+	if body.name != "player2":
+		return
+
+	player_inside = false
 
 
-func talk():
+func talk() -> void:
+	if talking:
+		return
+
 	if dialogue_box == null:
 		push_error("NPC: Dialoguebox not found!")
 		return
@@ -44,7 +52,7 @@ func talk():
 
 	talking = true
 
-	var lines := []
+	var lines: Array[Dictionary] = []
 
 	for line in dialogue_lines:
 		lines.append({
@@ -52,8 +60,13 @@ func talk():
 			"text": line
 		})
 
+	print("NPC: Starting dialogue")
+	print(lines)
+
 	dialogue_box.start_dialogue(lines)
 
 	await dialogue_box.dialogue_finished
+
+	print("NPC: Dialogue finished")
 
 	talking = false

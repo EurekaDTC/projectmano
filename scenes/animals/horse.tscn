@@ -344,12 +344,11 @@ radius = 14.0
 script = ExtResource("1_gl1uc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1630794037]
-position = Vector2(1, 2)
+position = Vector2(17, 17)
 sprite_frames = SubResource("SpriteFrames_wuxpp")
 animation = &"side_sleeping"
-frame_progress = 0.3414203
+frame_progress = 0.9912173
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=523777689]
-visible = false
-position = Vector2(5, 10)
+position = Vector2(18, 27)
 shape = SubResource("CircleShape2D_685ga")
