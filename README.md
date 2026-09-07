@@ -57,11 +57,7 @@ projectmano/
 | Walk into an NPC | Start dialogue |
 | Next button | Advance / skip typing on the current dialogue line |
 
-## Team Eurika
 
-- **Ansh** — programming
-- **Kinjal** — story & writing
-- **Puneet** — story & writing
 
 ## Status & roadmap
 
